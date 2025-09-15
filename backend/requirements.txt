@@ -1,0 +1,11 @@
+cliapp==1.20180812.1
+cmdtest==0.32+git
+gyp==0.1
+Markdown==3.5.2
+Pygments==2.17.2
+PyYAML==6.0.1
+setuptools==68.1.2
+six==1.16.0
+ttystatus==0.38
+wheel==0.42.0
+zombie-imp==0.0.2

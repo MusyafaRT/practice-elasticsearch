@@ -1,0 +1,89 @@
+{
+  "database": "postgresql://ecommerce:Niffier2025@localhost:5433/ecommerce",
+  "elasticsearch": "http://localhost:9200",
+  "mappings": [
+    {
+      "table": "users",
+      "index": "users",
+      "columns": [
+        "id",
+        "first_name",
+        "last_name",
+        "email",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "customers",
+      "index": "customers",
+      "columns": [
+        "id",
+        "customer_code",
+        "first_name",
+        "last_name",
+        "email",
+        "phone",
+        "gender",
+        "age",
+        "date_of_birth",
+        "address",
+        "is_active",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "product_categories",
+      "index": "product_categories",
+      "columns": ["id", "name", "description", "is_active", "created_at"]
+    },
+    {
+      "table": "products",
+      "index": "products",
+      "columns": [
+        "id",
+        "name",
+        "description",
+        "sku",
+        "category_id",
+        "price_per_unit",
+        "cost_per_unit",
+        "stock_quantity",
+        "min_stock_level",
+        "is_active",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    {
+      "table": "transactions",
+      "index": "transactions",
+      "columns": [
+        "id",
+        "transaction_number",
+        "transaction_date",
+        "customer_id",
+        "subtotal",
+        "tax_amount",
+        "discount_amount",
+        "total_amount",
+        "created_at"
+      ]
+    },
+    {
+      "table": "transaction_items",
+      "index": "transaction_items",
+      "columns": [
+        "id",
+        "transaction_id",
+        "product_id",
+        "quantity",
+        "price_per_unit",
+        "discount_per_unit",
+        "subtotal",
+        "created_at"
+      ]
+    }
+  ]
+}

@@ -65,7 +65,7 @@ const RecentNewsArticle = ({
         search_after: pageParam || undefined,
         start_date: start_date,
         end_date: end_date,
-        // search_query: search_query,
+        search_query: search_query,
       }),
     },
     {
@@ -151,31 +151,11 @@ const RecentNewsArticle = ({
               date={news.publish_date}
               title={news.title}
               url={news.url}
-              key={`${news.url}-${index}`} // Better key using unique identifier
+              key={`${news.url}-${index}`}
             />
           </div>
         ))}
       </div>
-
-      {/* Load More Button */}
-      {/* {hasNextPage && (
-        <div className="flex justify-center pt-4 border-t">
-          <button
-            onClick={() => fetchNextPage()}
-            disabled={isFetchingNextPage}
-            className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-          >
-            {isFetchingNextPage ? (
-              <div className="flex items-center gap-2">
-                <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
-                Loading...
-              </div>
-            ) : (
-              "Load More"
-            )}
-          </button>
-        </div>
-      )} */}
     </div>
   );
 };

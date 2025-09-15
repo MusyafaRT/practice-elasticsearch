@@ -4,23 +4,21 @@ from typing import Dict, Any
 
 class Settings(BaseSettings):
     DATABASE_URL: str = "postgresql+asyncpg://ecommerce:Niffier2025@localhost:5433/ecommerce"
-    
-    
 
     class Config:
         extra = "ignore"
-        env_file = ".env"  
+        env_file = ".env"
 
 settings = Settings()
 
 class OAuthSettings(BaseSettings):
-    GOOGLE_CLIENT_ID: str = "957654714781-1dq0kkh0edp675frm2b2nvktjqeehlih.apps.googleusercontent.com"
-    GOOGLE_CLIENT_SECRET: str = "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"
+    GOOGLE_CLIENT_ID: str = ""
+    GOOGLE_CLIENT_SECRET: str = ""
     GOOGLE_REDIRECT_URI: str = "http://localhost:8000/auth/oauth/google/callback"
 
     class Config:
         extra = "ignore"
-        env_file = ".env"  
+        env_file = ".env"
 
 oauth_settings = OAuthSettings()
 
@@ -32,11 +30,6 @@ OAUTH_PROVIDERS = {
         "client_id": oauth_settings.GOOGLE_CLIENT_ID,
         "client_secret": oauth_settings.GOOGLE_CLIENT_SECRET,
         "redirect_uri": oauth_settings.GOOGLE_REDIRECT_URI,
-        "scopes": [
-            "openid",
-            "email",
-            "profile"
-        ]
-    },
-    
+        "scopes": ["openid", "email", "profile"]
+    }
 }
